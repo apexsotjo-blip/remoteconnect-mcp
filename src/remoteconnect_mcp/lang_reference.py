@@ -185,7 +185,19 @@ LD_EXAMPLE = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 FBD_GUIDE = """\
 FBD (Function Block Diagram) — blocks + links on a grid
 =======================================================
+PREFER write_fbd_logic: describe blocks and wires ({"name":"Delay","type":"TON",
+"inputs":{"IN":"Ready.OUT","PT":"t#3s"},"outputs":{"Q":"PumpRun"}}) and the tool
+computes every coordinate below, declares variables, imports and builds.
+list_function_blocks / describe_function_block give exact pin names and types;
+read_fbd_logic turns an existing FBD section into that description for editing.
+Hand-written XML (rules below) is only needed for features the builder does not
+emit (jumps/labels, named connectors, free comment placement).
+
 <FBDSource nbRows="24" nbColumns="36"> contains <networkFBD> with:
+  (ALWAYS nbRows="24" nbColumns="36", as Control Expert writes them — they are not the drawing
+   size and blocks may sit far beyond row 24 / column 36. Other values make import fail with
+   E1189 'Object creation error (invalid position)'. Keep the drawing compact instead: proven up to
+   ~190 rows x ~120 columns; a single 250-row column failed — wrap into more columns.)
 - <FFBBlock instanceName=".." typeName="AND_BOOL|OR_BOOL|TON|RS|CTU|<DFB>..."
   additionnalPinNumber="0" enEnO="false" width="8" height="H">
   * instanceName: ".1", ".2"... for stateless EF blocks (anonymous);

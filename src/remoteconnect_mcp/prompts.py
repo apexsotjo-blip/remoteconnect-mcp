@@ -17,6 +17,8 @@ prompt's user message). Register them with register_prompts(mcp).
 
 from __future__ import annotations
 
+from .fbd_server import author_fbd_text
+
 
 def register_prompts(mcp) -> None:
     @mcp.prompt()
@@ -159,6 +161,8 @@ def register_prompts(mcp) -> None:
                 "Use write_st_logic(task, section, st_source, declare='name:TYPE, ...') — plain "
                 "IEC text, no XML. FB instances (TON/TOF/CTU/DFB types) must be declared.\n\n" + common
             )
+        if lang == "FBD":
+            return author_fbd_text()
         return (
             f"Goal: author a {lang} section (graphical/textual).\n\n"
             f"1. get_language_reference('{lang}') FIRST — it returns the exchange-XML structure "
@@ -167,6 +171,11 @@ def register_prompts(mcp) -> None:
             "2. import_xml(kind='section', task=..., xml_content=...).\n" + common +
             "SFC is the right choice for stepwise sequences (steps + transitions + ST actions)."
         )
+
+    @mcp.prompt()
+    def author_fbd(goal: str = "") -> str:
+        """Design and wire an FBD section from blocks and wires, then get it building clean."""
+        return author_fbd_text(goal)
 
     @mcp.prompt()
     def scaffold_project(cpu_part_number: str = "BME P58 2040", cpu_version: str = "") -> str:

@@ -25,6 +25,7 @@ from .audit import (
 )
 from .modbus import ModbusClient, ModbusError, parse_address
 from .prompts import register_prompts
+from .fbd_server import register_fbd_tools
 from . import schema as ce_schema
 from .remoteconnect import (
     discover_bundle,
@@ -69,7 +70,12 @@ mcp = FastMCP(
         "get_project_structure / list_variables / read_section -> edit -> "
         "build_project (its 'output' lists per-section errors; iterate until "
         "'Process succeeded') -> save_project. Writing logic: for ST use "
-        "write_st_logic (plain IEC text, no XML). For LD/FBD/SFC, FIRST call "
+        "write_st_logic (plain IEC text, no XML); read ST back with read_st_logic "
+        "(line-numbered, paged, searchable - not the full XML). For FBD use write_fbd_logic: give "
+        "blocks + wires ('Ready.OUT'), it computes all geometry, declares variables, "
+        "imports and builds; read_fbd_logic returns an existing FBD section in the "
+        "same form for editing. Find blocks and their exact pins with "
+        "list_function_blocks / describe_function_block. For LD/SFC, FIRST call "
         "get_language_reference(language) and mirror its validated example via "
         "import_xml(kind='section'). SFC is the right choice for stepwise "
         "sequences (steps + transitions + ST actions).\n\n"
@@ -86,11 +92,12 @@ mcp = FastMCP(
 
 # FastMCP doesn't forward a version to the low-level server, so its serverInfo
 # would otherwise report the mcp SDK version; set the real package version.
-mcp._mcp_server.version = "0.19.0"
+mcp._mcp_server.version = "0.20.0"
 
 ce = ControlExpertBridge()
 mb = ModbusClient()
 register_prompts(mcp)
+register_fbd_tools(mcp, ce)
 
 ONLINE_ENABLED = os.environ.get("CE_MCP_ENABLE_ONLINE", "").strip() in ("1", "true", "yes")
 
@@ -726,11 +733,16 @@ def list_data_types() -> dict:
 
 
 @mcp.tool()
-def list_variables(name_filter: str = "", max_results: int = 200) -> dict:
+def list_variables(name_filter: str = "", max_results: int = 200, offset: int = 0,
+                   type_filter: str = "") -> dict:
     """List global variables with type, comment, topological address (%MW...,
-    %I..., etc.) and initial value. name_filter does a case-insensitive
-    substring match on the variable name."""
-    return ce.list_variables(name_filter or None, max_results)
+    %I..., etc.), initial value and hardware_owner (I/O-managed variables).
+    name_filter: case-insensitive substring of the name. type_filter: exact
+    type name (e.g. 'BOOL', 'FC_AI', '_AI'). Results are paged: 'matched' is
+    the number of hits, continue with offset=next_offset. Fast on large
+    projects (one export instead of a per-variable walk)."""
+    from .var_tools import list_variables as _list
+    return ce._run(_list, ce, name_filter, max_results, offset, type_filter)
 
 
 @mcp.tool()
@@ -923,11 +935,27 @@ def use_fb_in_ladder(
 
 
 @mcp.tool()
-def read_section(task: str, section: str) -> dict:
+def read_section(task: str, section: str, max_chars: int = 60000) -> dict:
     """Read the logic of a program section as Control Expert XML. The XML
     contains the source code (ST text, ladder rungs, FBD networks...) and is
-    the same format accepted by import_xml(kind='section')."""
-    return ce.read_section(task, section)
+    the same format accepted by import_xml(kind='section').
+
+    Prefer read_st_logic (ST, paged/searchable) or read_fbd_logic (FBD as
+    blocks + wires): section XML gets very large (a 7,000-line ST section is
+    ~1.3 MB). XML longer than max_chars is saved to a file instead: the reply
+    then has 'saved_to' (full XML, usable with import_xml(file_path=...)),
+    'xml_size' and the first 4,000 characters in 'xml_head'."""
+    res = ce.read_section(task, section)
+    xml = res.get("xml") or ""
+    if max_chars and len(xml) > max_chars:
+        path = ce._temp_path(f"_{section}.xml")
+        with open(path, "w", encoding="utf-8", newline="") as f:
+            f.write(xml)
+        res = {k: v for k, v in res.items() if k != "xml"}
+        res.update({"xml_size": len(xml), "saved_to": path, "xml_head": xml[:4000],
+                    "hint": f"XML is {len(xml):,} chars (> max_chars={max_chars:,}); full text saved to "
+                            "'saved_to'. Use read_st_logic / read_fbd_logic for a compact view."})
+    return res
 
 
 @mcp.tool()

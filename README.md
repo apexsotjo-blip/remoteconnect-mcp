@@ -139,6 +139,11 @@ claude mcp add control-expert -- C:\path\to\control-expert-mcp\.venv\Scripts\pyt
 | `create_variable` / `update_variable` / `delete_variable` | Variable editing |
 | `read_section` | Section logic as Control Expert XML |
 | `write_st_logic` | **Write ST logic as plain IEC text** (no XML) — creates or replaces a section, with inline variable declarations |
+| `list_function_blocks` | Search every function / function block: installed library EFBs with exact pins (timers, counters, SR/RS, triggers, SCALING, RAMP, PIDFF, …), elementary functions (AND_BOOL, ADD, GT, SEL, LIMIT, conversions …) and the project's DFBs |
+| `describe_function_block` | Exact pins + IEC types of one block, extensible inputs, instance rules and a ready `write_fbd_logic` skeleton |
+| `write_fbd_logic` | **Wire an FBD section from blocks + wires** (`"IN": "Ready.OUT"`) — computes all geometry, declares variables, imports, builds, and maps build errors back to block names |
+| `read_st_logic` | Read an ST section as plain, line-numbered code — paged (`start_line`/`max_lines`) or searched (`find`) — instead of the full exchange XML (large sections are 100+ KB) |
+| `read_fbd_logic` | Read an existing FBD section back as the same blocks + wires description, to edit and rewrite it |
 | `get_language_reference` | Authoring guide + validated example for ST/LD/FBD/SFC/IL — the exchange-XML structure rules an AI client needs to write graphical logic (FBD pin-geometry rule, LD line/cell model, SFC chart layout) |
 | `validate_xml` | **Pre-validate** candidate exchange-XML against the installed `SrcXmlSchema` XSDs before import/build — instant structural errors with the legal value sets |
 | `place_fb_in_ladder` | **Drop any project DFB into Ladder, no template** — reads the DFB interface and generates the correct (CE-owned) pin geometry automatically, then bind pins |
@@ -167,6 +172,42 @@ claude mcp add control-expert -- C:\path\to\control-expert-mcp\.venv\Scripts\pyt
 | `plc_*` (opt-in) | Online: setup/connect/disconnect/state/transfer/run/stop |
 | `modbus_connect` / `modbus_disconnect` / `modbus_status` (opt-in) | Open/close a Modbus TCP link to the CPU/simulator's server (`127.0.0.1:502` for the sim) for live values |
 | `read_tags` / `write_tags` (opt-in) | Read/write LIVE located-tag values (`%M`/`%MW`) by name or address (`%MW86`, `%MW2:REAL`); the only live read/write path (COM API has none) |
+
+### Wiring FBD (no XML, no coordinates)
+
+The agent describes *what* to connect; `write_fbd_logic` works out *where*:
+
+```json
+[
+  {"name": "Ready", "type": "AND_BOOL",
+   "inputs": {"IN1": "PumpAuto", "IN2": "NOT PumpFault", "IN3": "LevelOk"}},
+  {"name": "StartDelay", "type": "TON", "inputs": {"IN": "Ready.OUT", "PT": "t#3s"}},
+  {"name": "Pump1", "type": "MOTOR_CTL",
+   "inputs": {"Start": "StartDelay.Q", "Stop": "NOT Ready.OUT", "Hours": "Pump1Hours"},
+   "outputs": {"Run": "Pump1Run"}}
+]
+```
+
+- Input sources: a variable, a literal (`t#3s`, `250.0`, `TRUE`) or a wire `"<block>.<PIN>"`; prefix `NOT ` to invert.
+- Functions (AND_BOOL, ADD, GT …) are anonymous (`.1`, `.2` …); EFB/DFB names become instance variables.
+- Blocks are laid out left→right in signal-flow order; extensible inputs (IN3, IN4 …) resize the block; generic functions take their type from their inputs.
+- New variables are declared with the pin's type; existing ones are left alone. Wire loops are rejected (feed back through a variable).
+- The build result lists only this section's messages, each mapped to the block it points at.
+- `read_fbd_logic` returns any FBD section in this form, so editing is read → change → write. Each block
+  carries its drawing position (`pos`), so an edit keeps the engineer's layout; only new blocks are placed
+  automatically. Pin values may also be ST expressions (`MBTV6.Closed AND NOT WP2.Auto`).
+- Large sections wrap into a compact grid (Control Expert's own FBDSource size `24 × 36` is always kept —
+  other values break block placement).
+
+The function-block catalog (`ffb_catalog.json`) is generated from the installed libset by
+`tools/build_ffb_catalog.py` (declares each block in a throw-away project and reads its pins through
+UDE `IEfb.ListSubfields`; `--verify-efs` builds every elementary-function definition). Blocks not in
+the catalog are read live from the open project's libset. Regenerate it after a Control Expert upgrade
+or for another platform (`--platform std --cpu ... --cpu-version ...`).
+
+Validated on Control Expert 16.2 (SCADAPack57x): AND/OR with 3 inputs, inverted pins and wires,
+column-skipping wires, generic ADD, GT with literal, R_TRIG/TON/SR, a DFB with an in/out pin, a
+read→write round trip — all `built_ok`; a REAL→BOOL wire is reported as E1092 on the right blocks.
 
 ### How the AI writes logic
 

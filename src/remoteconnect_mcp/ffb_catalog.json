@@ -1,0 +1,8627 @@
+{
+ "source": "UDE IEfb.ListSubfields on SCADAPack57x; libset C:\\Program Files (x86)\\Schneider Electric\\EcoStruxure Control Expert 16.2\\FFBLibset\\v16.2",
+ "generated": "2026-10-19T02:04:23",
+ "platform": "SCADAPack57x",
+ "efb_count": 70,
+ "ef_without_pins": 630,
+ "elementary_verified": {
+  "AND_BOOL": true,
+  "AND": true,
+  "OR_BOOL": true,
+  "OR": true,
+  "XOR_BOOL": true,
+  "XOR": true,
+  "NOT_BOOL": true,
+  "ADD": true,
+  "ADD_INT": true,
+  "ADD_DINT": true,
+  "ADD_UINT": true,
+  "ADD_UDINT": true,
+  "ADD_REAL": true,
+  "MUL": true,
+  "MUL_INT": true,
+  "MUL_DINT": true,
+  "MUL_UINT": true,
+  "MUL_UDINT": true,
+  "MUL_REAL": true,
+  "SUB": true,
+  "SUB_INT": true,
+  "SUB_DINT": true,
+  "SUB_UINT": true,
+  "SUB_UDINT": true,
+  "SUB_REAL": true,
+  "DIV": true,
+  "DIV_INT": true,
+  "DIV_DINT": true,
+  "DIV_UINT": true,
+  "DIV_UDINT": true,
+  "DIV_REAL": true,
+  "MOD": true,
+  "ABS": true,
+  "SQRT": true,
+  "NEG": true,
+  "GT": true,
+  "GE": true,
+  "EQ": true,
+  "NE": true,
+  "LE": true,
+  "LT": true,
+  "MOVE": true,
+  "SEL": true,
+  "LIMIT": true,
+  "MAX": true,
+  "MIN": true,
+  "INT_TO_REAL": true,
+  "REAL_TO_INT": true,
+  "DINT_TO_REAL": true,
+  "REAL_TO_DINT": true,
+  "INT_TO_DINT": true,
+  "DINT_TO_INT": true,
+  "UINT_TO_INT": true,
+  "INT_TO_UINT": true,
+  "UINT_TO_REAL": true,
+  "REAL_TO_UINT": true,
+  "BOOL_TO_INT": true,
+  "INT_TO_BOOL": true,
+  "WORD_TO_INT": true,
+  "INT_TO_WORD": true,
+  "TIME_TO_DINT": true,
+  "DINT_TO_TIME": true,
+  "UDINT_TO_REAL": true,
+  "REAL_TO_UDINT": true,
+  "INT_TO_TIME": true,
+  "TIME_TO_INT": true
+ },
+ "blocks": [
+  {
+   "name": "AUTOTUNE",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContController",
+   "description": "Automatic tuner setting",
+   "pins": [
+    {
+     "name": "PV",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "SP",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "RCPY",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "START",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PREV",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_AUTOTUNE",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV_O",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "SP_O",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "PARA_C",
+     "type": "ANY",
+     "dir": "out"
+    },
+    {
+     "name": "TRI",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "TRS",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "INFO",
+     "type": "Info_AUTOTUNE",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "AVGMV",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Moving average with fixed window size",
+   "pins": [
+    {
+     "name": "MAN",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "X",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "N",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "YMAN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "Y",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "RDY",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "AVGMV_K",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Moving average with frozen correction factor",
+   "pins": [
+    {
+     "name": "MAN",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "X",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "K",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "YMAN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "Y",
+     "type": "REAL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "COMP_DB",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContMathematics",
+   "description": "Comparison",
+   "pins": [
+    {
+     "name": "IN1",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "IN2",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "DBAND",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "HYST",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "GREATER",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "EQUAL",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "LESS",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTD",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Down counter only INT values",
+   "pins": [
+    {
+     "name": "CD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "LD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "INT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTD_DINT",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Down counter DINT values",
+   "pins": [
+    {
+     "name": "CD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "LD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "DINT",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "DINT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTD_INT",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Down counter INT values",
+   "pins": [
+    {
+     "name": "CD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "LD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "INT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTD_UDINT",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Down counter UDINT values",
+   "pins": [
+    {
+     "name": "CD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "LD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "UDINT",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "UDINT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTD_UINT",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Down counter UINT values",
+   "pins": [
+    {
+     "name": "CD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "LD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "UINT",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "UINT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTU",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Up counter only INT values",
+   "pins": [
+    {
+     "name": "CU",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "INT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTUD",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Up/Down counter INT values",
+   "pins": [
+    {
+     "name": "CU",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "CD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "LD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "QU",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "QD",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "INT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTUD_DINT",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Up/Down counter DINT values",
+   "pins": [
+    {
+     "name": "CU",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "CD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "LD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "DINT",
+     "dir": "in"
+    },
+    {
+     "name": "QU",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "QD",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "DINT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTUD_INT",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Up/Down counter INT values",
+   "pins": [
+    {
+     "name": "CU",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "CD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "LD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "QU",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "QD",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "INT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTUD_UDINT",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Up/Down counter UDINT values",
+   "pins": [
+    {
+     "name": "CU",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "CD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "LD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "UDINT",
+     "dir": "in"
+    },
+    {
+     "name": "QU",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "QD",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "UDINT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTUD_UINT",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Up/Down counter UINT values",
+   "pins": [
+    {
+     "name": "CU",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "CD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "LD",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "UINT",
+     "dir": "in"
+    },
+    {
+     "name": "QU",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "QD",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "UINT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTU_DINT",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Up counter DINT values",
+   "pins": [
+    {
+     "name": "CU",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "DINT",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "DINT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTU_INT",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Up counter INT values",
+   "pins": [
+    {
+     "name": "CU",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "INT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTU_UDINT",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Up counter UDINT values",
+   "pins": [
+    {
+     "name": "CU",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "UDINT",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "UDINT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "CTU_UINT",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Up counter UINT values",
+   "pins": [
+    {
+     "name": "CU",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "UINT",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CV",
+     "type": "UINT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "DTIME",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContConditioning",
+   "description": "Delay",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "T_DELAY",
+     "type": "TIME",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "BUFFER",
+     "type": "ANY",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "F_TRIG",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/LOGIC",
+   "description": "Falling edge detection",
+   "pins": [
+    {
+     "name": "CLK",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "HYST_DINT",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Indicator signal for maximum value delimiters with hysteresis",
+   "pins": [
+    {
+     "name": "X",
+     "type": "DINT",
+     "dir": "in"
+    },
+    {
+     "name": "HIGH",
+     "type": "DINT",
+     "dir": "in"
+    },
+    {
+     "name": "LOW",
+     "type": "DINT",
+     "dir": "in"
+    },
+    {
+     "name": "IND",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "HYST_INT",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Indicator signal for maximum value delimiters with hysteresis",
+   "pins": [
+    {
+     "name": "X",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "HIGH",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "LOW",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "IND",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "HYST_REAL",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Indicator signal for maximum value delimiters with hysteresis",
+   "pins": [
+    {
+     "name": "X",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "HIGH",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "LOW",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "IND",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "HYST_UDINT",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Indicator signal for maximum value delimiters with hysteresis",
+   "pins": [
+    {
+     "name": "X",
+     "type": "UDINT",
+     "dir": "in"
+    },
+    {
+     "name": "HIGH",
+     "type": "UDINT",
+     "dir": "in"
+    },
+    {
+     "name": "LOW",
+     "type": "UDINT",
+     "dir": "in"
+    },
+    {
+     "name": "IND",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "HYST_UINT",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Indicator signal for maximum value delimiters with hysteresis",
+   "pins": [
+    {
+     "name": "X",
+     "type": "UINT",
+     "dir": "in"
+    },
+    {
+     "name": "HIGH",
+     "type": "UINT",
+     "dir": "in"
+    },
+    {
+     "name": "LOW",
+     "type": "UINT",
+     "dir": "in"
+    },
+    {
+     "name": "IND",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "IMC",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContController",
+   "description": "Internal model controller",
+   "pins": [
+    {
+     "name": "PV",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "SP",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "FF",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "RCPY",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MAN_AUTO",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_IMC",
+     "dir": "in"
+    },
+    {
+     "name": "BUFFER",
+     "type": "ANY_ARRAY_REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "inout"
+    },
+    {
+     "name": "OUTD",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "DMO",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "MA_O",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "INFO",
+     "type": "Info_IMC",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "INDLIM_DINT",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Indicator signal for delimiters with hysteresis",
+   "pins": [
+    {
+     "name": "X",
+     "type": "DINT",
+     "dir": "in"
+    },
+    {
+     "name": "MX_HIGH",
+     "type": "DINT",
+     "dir": "in"
+    },
+    {
+     "name": "MX_LOW",
+     "type": "DINT",
+     "dir": "in"
+    },
+    {
+     "name": "MN_LOW",
+     "type": "DINT",
+     "dir": "in"
+    },
+    {
+     "name": "MN_HIGH",
+     "type": "DINT",
+     "dir": "in"
+    },
+    {
+     "name": "MX_IND",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "MN_IND",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "INDLIM_INT",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Indicator signal for delimiters with hysteresis",
+   "pins": [
+    {
+     "name": "X",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "MX_HIGH",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "MX_LOW",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "MN_LOW",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "MN_HIGH",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "MX_IND",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "MN_IND",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "INDLIM_REAL",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Indicator signal for delimiters with hysteresis",
+   "pins": [
+    {
+     "name": "X",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MX_HIGH",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MX_LOW",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MN_LOW",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MN_HIGH",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MX_IND",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "MN_IND",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "INDLIM_UDINT",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Indicator signal for delimiters with hysteresis",
+   "pins": [
+    {
+     "name": "X",
+     "type": "UDINT",
+     "dir": "in"
+    },
+    {
+     "name": "MX_HIGH",
+     "type": "UDINT",
+     "dir": "in"
+    },
+    {
+     "name": "MX_LOW",
+     "type": "UDINT",
+     "dir": "in"
+    },
+    {
+     "name": "MN_LOW",
+     "type": "UDINT",
+     "dir": "in"
+    },
+    {
+     "name": "MN_HIGH",
+     "type": "UDINT",
+     "dir": "in"
+    },
+    {
+     "name": "MX_IND",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "MN_IND",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "INDLIM_UINT",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Indicator signal for delimiters with hysteresis",
+   "pins": [
+    {
+     "name": "X",
+     "type": "UINT",
+     "dir": "in"
+    },
+    {
+     "name": "MX_HIGH",
+     "type": "UINT",
+     "dir": "in"
+    },
+    {
+     "name": "MX_LOW",
+     "type": "UINT",
+     "dir": "in"
+    },
+    {
+     "name": "MN_LOW",
+     "type": "UINT",
+     "dir": "in"
+    },
+    {
+     "name": "MN_HIGH",
+     "type": "UINT",
+     "dir": "in"
+    },
+    {
+     "name": "MX_IND",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "MN_IND",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "INTEGRATOR",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContConditioning",
+   "description": "Integrator with limit",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "GAIN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT_MIN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT_MAX",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "QMIN",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "QMAX",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "LAG_FILTER",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContConditioning",
+   "description": "Time lag device: 1st order",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "GAIN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "LAG",
+     "type": "TIME",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "LDLG",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContConditioning",
+   "description": "PD device with smoothing",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "GAIN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "LEAD",
+     "type": "TIME",
+     "dir": "in"
+    },
+    {
+     "name": "LAG",
+     "type": "TIME",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "LEAD",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContConditioning",
+   "description": "Differentiator with smoothing",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "GAIN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "LAG",
+     "type": "TIME",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "MFLOW",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContConditioning",
+   "description": "Mass flow block",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "PRES",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TEMP",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_MFLOW",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "MS",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContOutputProcessing",
+   "description": "Manual control of an output",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "FORC",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "MA_FORC",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "MAN_AUTO",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_MS",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "inout"
+    },
+    {
+     "name": "OUTD",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "MA_O",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "MS_DB",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContOutputProcessing",
+   "description": "Manual control of an output with dead band",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "FORC",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "MA_FORC",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "MAN_AUTO",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_MS_DB",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "RCPY",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "inout"
+    },
+    {
+     "name": "OUTD",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "MA_O",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "PIDFF",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContController",
+   "description": "Complete PID controller",
+   "pins": [
+    {
+     "name": "PV",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "SP",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "FF",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "RCPY",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MAN_AUTO",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_PIDFF",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "inout"
+    },
+    {
+     "name": "OUTD",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "MA_O",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "INFO",
+     "type": "Info_PIDFF",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "PI_B",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContController",
+   "description": "Simple PI controller",
+   "pins": [
+    {
+     "name": "PV",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "SP",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "RCPY",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MAN_AUTO",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_PI_B",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "inout"
+    },
+    {
+     "name": "OUTD",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "MA_O",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "DEV",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "PRJ_VERS",
+   "kind": "EFB",
+   "library": "System",
+   "family": "System/SystemSpecials",
+   "description": "FFB to get project version Info",
+   "pins": [
+    {
+     "name": "OS_VERSION",
+     "type": "INT",
+     "dir": "out"
+    },
+    {
+     "name": "UNITY_VERSION",
+     "type": "INT",
+     "dir": "out"
+    },
+    {
+     "name": "LIB_VERSION",
+     "type": "INT",
+     "dir": "out"
+    },
+    {
+     "name": "PRJ_NAME",
+     "type": "string[68]",
+     "dir": "out"
+    },
+    {
+     "name": "PRJ_VERSION",
+     "type": "UDINT",
+     "dir": "out"
+    },
+    {
+     "name": "MAJOR_VERSION",
+     "type": "INT",
+     "dir": "out"
+    },
+    {
+     "name": "MINOR_VERSION",
+     "type": "INT",
+     "dir": "out"
+    },
+    {
+     "name": "BUILD_VERSION",
+     "type": "INT",
+     "dir": "out"
+    },
+    {
+     "name": "SIGNATURE",
+     "type": "UDINT",
+     "dir": "out"
+    },
+    {
+     "name": "LAST_MODIFIED",
+     "type": "DT",
+     "dir": "out"
+    },
+    {
+     "name": "SECOND",
+     "type": "INT",
+     "dir": "out"
+    },
+    {
+     "name": "MINUTE",
+     "type": "INT",
+     "dir": "out"
+    },
+    {
+     "name": "HOUR",
+     "type": "INT",
+     "dir": "out"
+    },
+    {
+     "name": "DAY",
+     "type": "INT",
+     "dir": "out"
+    },
+    {
+     "name": "MONTH",
+     "type": "INT",
+     "dir": "out"
+    },
+    {
+     "name": "YEAR",
+     "type": "INT",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "PWM1",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContOutputProcessing",
+   "description": "Pulse width Modulation",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "RST",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_PWM1",
+     "dir": "in"
+    },
+    {
+     "name": "OUT_NEG",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "OUT_POS",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "QDTIME",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContConditioning",
+   "description": "Deadtime device",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "T_DELAY",
+     "type": "TIME",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "READY",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "RAMP",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContSetPoint",
+   "description": "Ramp generator",
+   "pins": [
+    {
+     "name": "RSP",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_RAMP",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "SP",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "DONE",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "RATIO",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContSetPoint",
+   "description": "Ratio controller",
+   "pins": [
+    {
+     "name": "PV",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "PV_TRACK",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "RK",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "K_RK",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "K",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_RATIO",
+     "dir": "in"
+    },
+    {
+     "name": "KACT",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "SP",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "RS",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/LOGIC",
+   "description": "Bistable function block, reset dominant",
+   "pins": [
+    {
+     "name": "S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R1",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "Q1",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "R_TRIG",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/LOGIC",
+   "description": "Rising edge detection",
+   "pins": [
+    {
+     "name": "CLK",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "SAH",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "Detecting and holding a rising edge",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "ANY",
+     "dir": "in"
+    },
+    {
+     "name": "CLK",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "ANY",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "ANY",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "SAI_IN_MX",
+   "kind": "EFB",
+   "library": "Safety",
+   "family": "Safety/S_HighAvailability",
+   "description": "SAI EFB Black Channel Consumer",
+   "pins": [
+    {
+     "name": "INOUT_MOD_ANA_4_INST",
+     "type": "ANY",
+     "dir": "inout"
+    }
+   ]
+  },
+  {
+   "name": "SAMPLETM",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContController",
+   "description": "Sample Time",
+   "pins": [
+    {
+     "name": "INTERVAL",
+     "type": "TIME",
+     "dir": "in"
+    },
+    {
+     "name": "DELSCANS",
+     "type": "INT",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "SCALING",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContConditioning",
+   "description": "Scaling",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_SCALING",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "SDI_IN_MX",
+   "kind": "EFB",
+   "library": "Safety",
+   "family": "Safety/S_HighAvailability",
+   "description": "SDI EFB Black Channel Consumer",
+   "pins": [
+    {
+     "name": "INOUT_MOD_DIS_16_INST",
+     "type": "ANY",
+     "dir": "inout"
+    }
+   ]
+  },
+  {
+   "name": "SDO_IN_MX",
+   "kind": "EFB",
+   "library": "Safety",
+   "family": "Safety/S_HighAvailability",
+   "description": "SDO EFB Black Channel Consumer",
+   "pins": [
+    {
+     "name": "INOUT_MOD_DIS_8_INST",
+     "type": "ANY",
+     "dir": "inout"
+    }
+   ]
+  },
+  {
+   "name": "SDO_OUT_MX",
+   "kind": "EFB",
+   "library": "Safety",
+   "family": "Safety/S_HighAvailability",
+   "description": "SDO EFB Black Channel Producer",
+   "pins": [
+    {
+     "name": "INOUT_MOD_DIS_8_INST",
+     "type": "ANY",
+     "dir": "inout"
+    }
+   ]
+  },
+  {
+   "name": "SERVO",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContOutputProcessing",
+   "description": "Control for electric servo motors",
+   "pins": [
+    {
+     "name": "SEN",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "INPD",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MA_I",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "RCPY",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "RST",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R_STOP",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "L_STOP",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_SERVO",
+     "dir": "in"
+    },
+    {
+     "name": "RAISE",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "LOWER",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "SFCCNTRL",
+   "kind": "EFB",
+   "library": "System",
+   "family": "System/SFC",
+   "description": "Controlling SFC charts",
+   "pins": [
+    {
+     "name": "CHARTREF",
+     "type": "SFCCHART_STATE",
+     "dir": "in"
+    },
+    {
+     "name": "INIT",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "CLEAR",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "DISTIME",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "DISTRANS",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "DISACT",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "STEPUN",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "STEPDEP",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "RESETERR",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "DISRMOTE",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "ALLTRANS",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "RESSTEPT",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "INITST",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "CLEARST",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "TIMEDIS",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "TRANSDIS",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "ACTDIS",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "MODECHG",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "STATECHG",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "TIMEERR",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "TERRACT",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "SPLRG",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContOutputProcessing",
+   "description": "Controlling 2 actuators",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_SPLRG",
+     "dir": "in"
+    },
+    {
+     "name": "OUT1",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "OUT2",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "SP_SEL",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContSetPoint",
+   "description": "Setpoint switch",
+   "pins": [
+    {
+     "name": "RSP",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "SP_RSP",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_SP_SEL",
+     "dir": "in"
+    },
+    {
+     "name": "PV",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MA_I",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "SP",
+     "type": "REAL",
+     "dir": "inout"
+    },
+    {
+     "name": "LSP_MEM",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "SR",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/LOGIC",
+   "description": "Bistable function block, set dominant",
+   "pins": [
+    {
+     "name": "S1",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "R",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "Q1",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "SRA_IN_MX",
+   "kind": "EFB",
+   "library": "Safety",
+   "family": "Safety/S_HighAvailability",
+   "description": "SRA EFB Black Channel Consumer",
+   "pins": [
+    {
+     "name": "INOUT_MOD_DIS_4_INST",
+     "type": "ANY",
+     "dir": "inout"
+    }
+   ]
+  },
+  {
+   "name": "SRA_OUT_MX",
+   "kind": "EFB",
+   "library": "Safety",
+   "family": "Safety/S_HighAvailability",
+   "description": "SRA EFB Black Channel Producer",
+   "pins": [
+    {
+     "name": "INOUT_MOD_DIS_4_INST",
+     "type": "ANY",
+     "dir": "inout"
+    }
+   ]
+  },
+  {
+   "name": "STEP2",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContController",
+   "description": "Two point controller",
+   "pins": [
+    {
+     "name": "PV",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "SP",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MAN_AUTO",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_STEP2",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "DEV",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "MA_O",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "STEP3",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContController",
+   "description": "Three point controller",
+   "pins": [
+    {
+     "name": "PV",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "SP",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MAN_AUTO",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_STEP3",
+     "dir": "in"
+    },
+    {
+     "name": "OUT_NEG",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "OUT_POS",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "DEV",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "MA_O",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "TOF",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Off delay",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PT",
+     "type": "TIME",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "ET",
+     "type": "TIME",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "TON",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "On delay",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PT",
+     "type": "TIME",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "ET",
+     "type": "TIME",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "TOTALIZER",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContConditioning",
+   "description": "Integrator",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "MODE",
+     "type": "Mode_TOTALIZER",
+     "dir": "in"
+    },
+    {
+     "name": "PARA",
+     "type": "Para_TOTALIZER",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "INFO",
+     "type": "Info_TOTALIZER",
+     "dir": "out"
+    },
+    {
+     "name": "STATUS",
+     "type": "WORD",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "TP",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TIMERSANDCOUNTERS",
+   "description": "Pulse",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "PT",
+     "type": "TIME",
+     "dir": "in"
+    },
+    {
+     "name": "Q",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "ET",
+     "type": "TIME",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "TRIGGER",
+   "kind": "EFB",
+   "library": "Base_Lib",
+   "family": "Base_Lib/LOGIC",
+   "description": "Detection of all edges",
+   "pins": [
+    {
+     "name": "CLK",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "RISE",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "EDGE",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "FALL",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "VEL_LIM",
+   "kind": "EFB",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContConditioning",
+   "description": "Velocity limiter",
+   "pins": [
+    {
+     "name": "IN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "RATE",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT_MIN",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT_MAX",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_I",
+     "type": "REAL",
+     "dir": "in"
+    },
+    {
+     "name": "TR_S",
+     "type": "BOOL",
+     "dir": "in"
+    },
+    {
+     "name": "OUT",
+     "type": "REAL",
+     "dir": "out"
+    },
+    {
+     "name": "QMIN",
+     "type": "BOOL",
+     "dir": "out"
+    },
+    {
+     "name": "QMAX",
+     "type": "BOOL",
+     "dir": "out"
+    }
+   ]
+  },
+  {
+   "name": "ACI030",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ACI030_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ACI040",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ACI040_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ACO020",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ACO020_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ACO130",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ACO130_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ADDM",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ADDMX",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ADDR",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ADD_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ADD_ARDINT_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ADD_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ADD_ARINT_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ADD_DT_TIME",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/DateAndTime",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ADD_TOD_TIME",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/DateAndTime",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AII330",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AII33010",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AII33010_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AII330_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AIO330",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AIO330_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AMM090",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AMM090_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AND_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AND_ARDWORD_DWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AND_AREBOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AND_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AND_ARWORD_WORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ARI030",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ARI030_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ARINT_TO_DATE",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ARINT_TO_DT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ARINT_TO_TOD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ASCII_TO_STRING",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ASCII_TO_STRING_INV",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ATI030",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ATI030_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AUX_WRITE_ANA_CH_NTS",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOEdge",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AUX_WRITE_DIS_CH_NTS",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOEdge",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AVE_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AVE_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AVE_REAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AVE_UDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AVE_UINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AVI030",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AVI030_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AVO020",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "AVO020_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "BCD_TO_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "BIT_TO_BYTE",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "BIT_TO_WORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "BYTE_TO_BIT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CANCEL",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CAN_HANDLER",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CC",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/CLC_INT",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CFG_CP_F",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CFG_CP_V",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CFG_CS",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CFG_FS",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CFG_IA",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CFG_RA",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CFG_SA",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CLEARCHART",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SFC",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CLOSE_FILE",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CLOSE_TCP_CNX",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CONCAT_STR",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Strings",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "COPY_ARDINT_AREBOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "COPY_AREBOOL_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "COPY_AREBOOL_AREBOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "COPY_AREBOOL_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "COPY_ARINT_AREBOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "COSD",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_EQN_EXT",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CREAD_REG",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CREATE_FILE",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "CWRITE_REG",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DATA_EXCH",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DATA_EXCH_NTS",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOEdge",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DATA_EXCH_X80",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DATE_TO_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DATE_TO_STRING",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DBCD_TO_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DBCD_TO_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DEAD_ZONE_REAL",
+   "kind": "EF",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DEG_TO_RAD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DELETE_FILE",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DELETE_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Strings",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DEREG",
+   "kind": "EF",
+   "library": "Diagnostics",
+   "family": "Diagnostics/Diagnostics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DINT_TO_DBCD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DINT_TO_STRING",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DIVTIME_REAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/DateAndTime",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DIV_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DIV_ARDINT_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DIV_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DIV_ARINT_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DIV_DINT_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DIV_INT_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DROP",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DROP_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DRV_DNLD",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DRV_UPLD",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DT_TO_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "DT_TO_STRING",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "D_ACT",
+   "kind": "EF",
+   "library": "Diagnostics",
+   "family": "Diagnostics/Diagnostics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "D_DYN",
+   "kind": "EF",
+   "library": "Diagnostics",
+   "family": "Diagnostics/Diagnostics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "D_GRP",
+   "kind": "EF",
+   "library": "Diagnostics",
+   "family": "Diagnostics/Diagnostics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "D_LOCK",
+   "kind": "EF",
+   "library": "Diagnostics",
+   "family": "Diagnostics/Diagnostics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "D_PRE",
+   "kind": "EF",
+   "library": "Diagnostics",
+   "family": "Diagnostics/Diagnostics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "D_REA",
+   "kind": "EF",
+   "library": "Diagnostics",
+   "family": "Diagnostics/Diagnostics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EQUAL_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EQUAL_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EQUAL_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EQUAL_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EQUAL_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EQUAL_STR",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Strings",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ERT_854_10",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ERT_854_10_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ERT_854_20",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ERT_854_20_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ERT_854_30",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ERT_854_30_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ETHPORT_CONTROL_MX",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ETH_PORT_CTRL",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EXCH_QX",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EXPT_REAL_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/MATH",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EXPT_REAL_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/MATH",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EXPT_REAL_REAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/MATH",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EXPT_REAL_UDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/MATH",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EXPT_REAL_UINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/MATH",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "EXTRACT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_EQP_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_EQP_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_EQP_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_EQP_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_EQP_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_EQ_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_EQ_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_EQ_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_EQ_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_EQ_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_GT_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_GT_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_GT_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_GT_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_GT_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Strings",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_LT_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_LT_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_LT_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_LT_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FIND_LT_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FREERUN",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SYSCLOCK",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "FREEZECHART",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SFC",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "GET_FILE_INFO",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "GET_FREESIZE",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "GET_TS_EVT_M",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SYSCLOCK",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "GET_TS_EVT_Q",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SYSCLOCK",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "GRAY_TO_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "HSBY_BUILD_OFFLINE",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/HotStand-by",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "HSBY_RD",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/HotStand-by",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "HSBY_ST",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/HotStand-by",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "HSBY_WR",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/HotStand-by",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "IDN_CHK",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "IDN_XFER",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "IMIO_IN",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOImmediate",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "IMIO_OUT",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOImmediate",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "INITCHART",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SFC",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "INPUT_BYTE",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "INPUT_CHAR",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "INPUT_CHAR_QX",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "INSERT_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Strings",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "INT_TO_BCD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "INT_TO_DBCD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "INT_TO_STRING",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ITCNTRL",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/EVENTS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "IU_ERIO",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOImmediate",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "I_FILTER",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "I_NORM",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "I_NORM_WARN",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "I_PHYS",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "I_PHYS_WARN",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "I_RAW",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "I_RAWSIM",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "I_SCALE",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "I_SCALE_WARN",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "I_SET",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "K_SQRT",
+   "kind": "EF",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContMathematics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9P_KPID",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_PCFL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9P_PI",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_PCFL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9P_PID",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_PCFL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_AND",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_AND_BB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_AND_BI",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_AND_IB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_AND_II",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BCD",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Math",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BLKM",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BLKM_BB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BLKM_BI",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BLKM_IB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BLKM_II",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BLKT",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BMDI",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BMDI_BB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BMDI_BI",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BMDI_IB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BMDI_II",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BROT",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BROT_BB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BROT_BI",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BROT_IB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_BROT_II",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_CHECKFP",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_CKSM",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_CMPR",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_CMPR_B",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_CMPR_I",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_COMP",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_COMP_BB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_COMP_BI",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_COMP_IB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_COMP_II",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_DCTR",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_COUNT_TIME",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_DIOH",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_DISA",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MISC",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_DIV_DP",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Math",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_DIV_I",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Math",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_DRUM",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_FIN",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_FIN_B",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_FIN_I",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_FOUT",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_FOUT_I",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_FTOI",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Math",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_IBKR",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_IBKW",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_ICMP",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_ID",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_IE",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_IMIO",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_ISNAN",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_ITOF",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Math",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_MRTM",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_MSTR",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_OR",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_OR_BB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_OR_BI",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_OR_IB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_OR_II",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_PID2",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_R2T",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_R2T_B",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_SCIF",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_STAT",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_STAT_B",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_STAT_I",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_T001",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_COUNT_TIME",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_T01",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_COUNT_TIME",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_T1",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_COUNT_TIME",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_T1MS",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_COUNT_TIME",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_T2R",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_T2R_B",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_T2T",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_T2T_B",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_TBLK",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_MOVE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_UCTR",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_COUNT_TIME",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_XMIT",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_CONTL_COMM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_XOR",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_XOR_BB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_XOR_BI",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_XOR_IB",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "L9_XOR_II",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_Matrix",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LEFT_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Strings",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LEN_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Strings",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_BOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_BYTE",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_DWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_IND_BOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_IND_BYTE",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_IND_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_IND_DWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_IND_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_IND_REAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_IND_TIME",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_IND_UDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_IND_UINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_IND_WORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_REAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_TIME",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_UDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_UINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LIMIT_WORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LOOKUP_TABLE1",
+   "kind": "EF",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/Measurement",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LXM_DOWNLOADMTASK",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LXM_GEARPOS",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LXM_GEARPOSS",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LXM_RESTORE",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/LEXIUM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LXM_SAVE",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/LEXIUM",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LXM_STARTMTASK",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "LXM_UPLOADMTASK",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_BOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_BYTE",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_DWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_REAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_TIME",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_UDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_UINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MAX_WORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MBP_MSTR",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_HOME",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_JOG",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_MOVEABSOLUTE",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_MOVEADDITIVE",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_MOVERELATIVE",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_MOVEVELOCITY",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_POWER",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_READACTUALPOSITION",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_READACTUALTORQUE",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_READACTUALVELOCITY",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_READAXISERROR",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_READPARAMETER",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_READSTATUS",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_RESET",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_STOP",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_TORQUECONTROL",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MC_WRITEPARAMETER",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MID_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Strings",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_BOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_BYTE",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_DWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_REAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_TIME",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_UDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_UINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MIN_WORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MMF_BITS",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MMF_ESUB",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MMF_INDX",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MMF_JOG",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MMF_MOVE",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MMF_RST",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MMF_SUB",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MMF_USUB",
+   "kind": "EF",
+   "library": "Motion",
+   "family": "Motion/MMFStart",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MODBUSP_ADDR",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOD_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOD_ARDINT_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOD_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOD_ARINT_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOD_DINT_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOD_INT_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOVE_AREBOOL_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOVE_AREBOOL_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOVE_BOOL_AREBOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOVE_DINT_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOVE_DINT_AREBOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOVE_DWORD_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOVE_INT_AREBOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOVE_INT_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOVE_REAL_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MOVE_WORD_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MULDIV_W",
+   "kind": "EF",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContMathematics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MULTIME_REAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/DateAndTime",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MUL_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MUL_ARDINT_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MUL_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MUL_ARINT_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MUX_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MUX_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MUX_UDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "MUX_UINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "NOP850_EVTS",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SYSCLOCK",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "NOP850_EVTS_MULTI_16",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SYSCLOCK",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "NOP850_EVTS_MULTI_8",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SYSCLOCK",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "NOT_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "NOT_AREBOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "NOT_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "OCCUR_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "OCCUR_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "OCCUR_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "OCCUR_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "OCCUR_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ONLEVT",
+   "kind": "EF",
+   "library": "Diagnostics",
+   "family": "Diagnostics/Diagnostics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "OPEN_FILE",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "OR_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "OR_ARDWORD_DWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "OR_AREBOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "OR_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "OR_ARWORD_WORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "OUT_IN_CHAR",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "O_FILTER",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "O_NORM",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "O_NORM_WARN",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "O_PHYS",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "O_PHYS_WARN",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "O_RAW",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "O_SCALE",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "O_SCALE_WARN",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogScaling",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "O_SET",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOAnalogConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "PID_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/CLC_INT",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "PLC_TRENDTOOL",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SystemSpecials",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "PRINT_CHAR",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "PRINT_CHAR_QX",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "PWM_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/CLC_INT",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "PWS_CMD",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/PwsMaint",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "PWS_DIAG",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/PwsMaint",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "QUANTUM",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "RAD_TO_DEG",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "RCV_TLG",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "RD_FILE_TO_DATA",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_ANA_CH_NTS",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOEdge",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_ASYN",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_DDT",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_DIAG_MOD_NTS",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOEdge",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_DIS_CH_NTS",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOEdge",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_GDATA",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_PARAM_MX",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/ExplicitExchange",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_REG",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_REG_QX",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_REMOTE",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_SDO",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_STS_MX",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/ExplicitExchange",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_STS_QX",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/ExplicitExchange",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_U_PCMCIA",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_VAR",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_VAR_X80",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "READ_V_PCMCIA",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "REGDFB",
+   "kind": "EF",
+   "library": "Diagnostics",
+   "family": "Diagnostics/Diagnostics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "REGEXT",
+   "kind": "EF",
+   "library": "Diagnostics",
+   "family": "Diagnostics/Diagnostics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "REGIO",
+   "kind": "EF",
+   "library": "Diagnostics",
+   "family": "Diagnostics/Diagnostics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "REPLACE_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Strings",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "RESETSTEP",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SFC",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "RESTORE_PARAM_MX",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/ExplicitExchange",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "REV_XFER",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/HotStand-by",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "RIGHT_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Strings",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ROL_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ROL_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ROL_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ROL_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ROL_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ROR_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ROR_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ROR_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ROR_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "ROR_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "RRTC_DT_MS",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SYSCLOCK",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "R_NTPC",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SYSCLOCK",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SATURATION",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/MATH",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SAVE_PARAM_MX",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/ExplicitExchange",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SCHEDULE",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SYSCLOCK",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SEEK_FILE",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SEL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": false,
+   "superseded_by_builtin": true
+  },
+  {
+   "name": "SEND_EMAIL",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SEND_REQ",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SEND_TLG",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SERVO_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/CLC_INT",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SETSTEP",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SFC",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SET_FILE_ATTRIBUTES",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SET_VAL",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SystemSpecials",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SFC_RESTORE",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SFC",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SIG_CHECK",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SystemSpecials",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SIG_WRITE",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SystemSpecials",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SIND",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_EQN_EXT",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SIZEOF",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SORT_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SORT_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SORT_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SORT_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SORT_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "STRING_TO_ASCII",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "STRING_TO_ASCII_INV",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "STRING_TO_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "STRING_TO_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUB_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUB_ARDINT_DINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUB_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUB_ARINT_INT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUB_DATE_DATE",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/DateAndTime",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUB_DINT_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUB_DT_DT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/DateAndTime",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUB_DT_TIME",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/DateAndTime",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUB_INT_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUB_TOD_TIME",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/DateAndTime",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUB_TOD_TOD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/DateAndTime",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUM_ARDINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUM_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUM_ARREAL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SUM_W",
+   "kind": "EF",
+   "library": "CONT_CTL",
+   "family": "CONT_CTL/ContMathematics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SWAP_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SWAP_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SYMAX_IP_ADDR",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SYST_READ_FLOAT_STATUS",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SystemStatus",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SYST_READ_TASK_BIT",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SystemStatus",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SYST_RESET_TASK_BIT",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SystemStatus",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "SYST_TIME",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SystemStatus",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_AIN",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_HighAvailability",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_AISIL2",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_HighAvailability",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_BIT_TO_BYTE",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_BIT_TO_WORD",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_BYTE_TO_BIT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_COMPUTE_CRC32_MX",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_HighAvailability",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_CTD_DINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_CTD_INT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_CTD_UDINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_CTD_UINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_CTUD_DINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_CTUD_INT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_CTUD_UDINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_CTUD_UINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_CTU_DINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_CTU_INT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_CTU_UDINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_CTU_UINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_DIN",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_HighAvailability",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_DISIL2",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_HighAvailability",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_DOIN",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_HighAvailability",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_F_TRIG",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_LOGIC",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_HSBY_SWAP",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_HotStandby",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_LIMIT_BOOL",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_LIMIT_BYTE",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_LIMIT_DINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_LIMIT_DWORD",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_LIMIT_INT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_LIMIT_UDINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_LIMIT_UINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_LIMIT_WORD",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MAX_BOOL",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MAX_BYTE",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MAX_DINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MAX_DWORD",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MAX_INT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MAX_UDINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MAX_UINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MAX_WORD",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MIN_BOOL",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MIN_BYTE",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MIN_DINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MIN_DWORD",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MIN_INT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MIN_UDINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MIN_UINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MIN_WORD",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MUX_DINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MUX_INT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MUX_UDINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_MUX_UINT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_RS",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_LOGIC",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_R_TRIG",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_LOGIC",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_SEL",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_STATISTICAL",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_SMOVE_BIT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_MATHEMATICS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_SMOVE_WORD",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_MATHEMATICS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_SR",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_LOGIC",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_SYST_CLOCK_MX",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_System",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_SYST_CLOCK_MX2",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_System",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_SYST_NO_NTP_MX",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_System",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_SYST_READ_TASK_BIT_MX",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_System",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_SYST_RESET_TASK_BIT_MX",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_System",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_SYST_STAT_MX",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_System",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_SYST_TIME_MX",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_System",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_TOF",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_TON",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_TP",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TIMERSANDCOUNTERS",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "S_WORD_TO_BIT",
+   "kind": "EF",
+   "library": "Safety",
+   "family": "Safety/S_TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "T850_TO_T870",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SYSCLOCK",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "T870_TO_T850",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SYSCLOCK",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "TAND",
+   "kind": "EF",
+   "library": "Unity984",
+   "family": "Unity984/U984_EQN_EXT",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "TCP_IP_ADDR",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "TE_DOWNLOADDRIVEPARAM",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "TE_UPLOADDRIVEPARAM",
+   "kind": "EF",
+   "library": "MotionFunctionBlock",
+   "family": "MotionFunctionBlock/Sc_MotionFunctionBlock",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "TIME_TO_STRING",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "TOD_TO_ARINT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "TOD_TO_STRING",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_CONNECT",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_CONNECTIONGETSTATUS",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_DISCONNECT",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_MONITOREDITEMADDLIST",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_MONITOREDITEMOPERLIST",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_MONITOREDITEMRMVLIST",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_NAMESPACEGETINDEXLIST",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_NODEGETHANDLELIST",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_NODERELEASEHANDLELIST",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_READLIST",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_SUBSCRIPTIONCREATE",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_SUBSCRIPTIONDELETE",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_SUBSCRIPTIONPROCESSED",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UA_WRITELIST",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/OpcuaClient",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UNITE_SERVER",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "UREGDFB",
+   "kind": "EF",
+   "library": "Diagnostics",
+   "family": "Diagnostics/Diagnostics",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WORD_TO_BIT",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/TypeToType",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_ASYN",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_CMD_MX",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/ExplicitExchange",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_CMD_QX",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/ExplicitExchange",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_GDATA",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_INPUT_AREBOOL_16",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOSimulation",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_PARAM_MX",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/ExplicitExchange",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_REG",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_REG_QX",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_REMOTE",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_SDO",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_U_PCMCIA",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_VAR",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_VAR_X80",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WRITE_V_PCMCIA",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "WR_DATA_TO_FILE",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SE_DOSFILE",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "XBE",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "XDROP",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "XDROP_X80",
+   "kind": "EF",
+   "library": "IO",
+   "family": "IO/IOQuantumConf",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "XMIT",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "XOR_ARDWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "XOR_ARDWORD_DWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "XOR_AREBOOL",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "XOR_ARWORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "XOR_ARWORD_WORD",
+   "kind": "EF",
+   "library": "Base_Lib",
+   "family": "Base_Lib/Arrays",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "XXMIT",
+   "kind": "EF",
+   "library": "Communication",
+   "family": "Communication/Extended",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  },
+  {
+   "name": "_POU_COPY_PARAM",
+   "kind": "EF",
+   "library": "System",
+   "family": "System/SystemSpecials",
+   "description": "",
+   "pins": [],
+   "pins_unknown": true
+  }
+ ]
+}

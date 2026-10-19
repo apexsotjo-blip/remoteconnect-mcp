@@ -1,6 +1,6 @@
 [project]
 name = "remoteconnect-mcp"
-version = "0.19.0"
+version = "0.20.0"
 description = "MCP server for Schneider Electric RemoteConnect and SCADAPack x70 logic projects"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -25,4 +25,4 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [tool.setuptools.package-data]
-remoteconnect_mcp = ["native/*.cs"]
+remoteconnect_mcp = ["native/*.cs", "ffb_catalog.json"]
